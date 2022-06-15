@@ -16,14 +16,14 @@ const index = () => {
 
   const useTokenInfos = useTokenDataStore((state) => state.tokenInfos)
   const usePutTokenData = useTokenDataStore((state) => state.putTokenData)
-  const useResetTokenData = useTokenDataStore((state) => state.reset)
-
-  console.log(useTokenInfos)
+  const useResetTokenData = useTokenDataStore((state) => state.resetTokenData)
 
   return (
     <div>
       <div>Priority connector is:{getName(web3React.connector)} </div>
       <div>count: {useTokenInfos.length}</div>
+      <div>balance: {useTokenInfos[0]?.balance}</div>
+
       <button
         onClick={() => {
           usePutTokenData({ balance: '1', allowances: [], tokenId: 'usdc' })
@@ -38,6 +38,7 @@ const index = () => {
       >
         reset
       </button>
+      <button onClick={() => console.log(useTokenInfos)}>show state</button>
       <div style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}>
         <MetaMaskCard />
         <WalletConnectCard />

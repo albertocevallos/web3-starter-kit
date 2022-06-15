@@ -1,5 +1,5 @@
 import { ZERO_ADDRESS } from './blockchain'
-import { CONTRACTS } from './contracts'
+import { VAULTS } from './contracts'
 
 export interface Token {
   symbol: string
@@ -59,9 +59,8 @@ export const getTokenId = (address: string): TokenId | undefined =>
   tokenIdsArray.find((t) => tokens[t].address.toLowerCase() === address.toLowerCase())
 
 export const getAllowanceAddresses = (tokenId: TokenId): string[] => {
-  const main = Object.values(CONTRACTS)
+  const main = Object.values(VAULTS)
     .filter((x) => x.underlyingToken === tokenId)
     .map((x) => x.address)
-
   return main
 }

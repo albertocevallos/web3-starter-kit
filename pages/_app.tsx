@@ -10,8 +10,14 @@ import Head from 'next/head'
 
 import Web3Provider from 'components/web3/Provider'
 
+import TokenDataUpdater from 'store/tokendata/updater'
+
 function Updaters() {
-  return <></>
+  return (
+    <>
+      <TokenDataUpdater />
+    </>
+  )
 }
 
 const theme = {
