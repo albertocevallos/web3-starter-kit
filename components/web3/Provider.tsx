@@ -16,16 +16,13 @@ const connectors: [MetaMask | WalletConnect | CoinbaseWallet | Network, Web3Reac
   [network, networkHooks],
 ]
 
-function Child() {
-  const { connector } = useWeb3React()
-  console.log(`Priority Connector is: ${getName(connector)}`)
-  return null
+interface LayoutProps {
+  children: JSX.Element
 }
-
-export default function Provider() {
+export default function Provider({ children }: LayoutProps) {
   return (
     <Web3ReactProvider connectors={connectors}>
-      <Child />
+      <>{children}</>
     </Web3ReactProvider>
   )
 }

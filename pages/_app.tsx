@@ -37,7 +37,6 @@ export default function MyApp(props: any) {
       </Head>
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          <Web3Provider />
           <Updaters />
           <Layout>
             <motion.div
@@ -53,7 +52,9 @@ export default function MyApp(props: any) {
                 },
               }}
             >
-              <Component {...pageProps} />
+              <Web3Provider>
+                <Component {...pageProps} />
+              </Web3Provider>
             </motion.div>
           </Layout>
         </React.Fragment>
