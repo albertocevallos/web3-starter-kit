@@ -26,7 +26,7 @@ const index = () => {
       <div>count: {useTokenInfos.length}</div>
       <button
         onClick={() => {
-          usePutTokenData({ balance: '0', allowances: [], tokenId: 'eth' })
+          usePutTokenData({ balance: '1', allowances: [], tokenId: 'usdc' })
         }}
       >
         increment

@@ -10,3 +10,9 @@ export interface TokenData {
   balance: string
   allowances: Allowance[]
 }
+
+export const defaultTokenData = (tokenId: TokenId): TokenData => ({
+  balance: '0',
+  allowances: [],
+  tokenId: tokenId,
+})
