@@ -36,28 +36,28 @@ export default function MyApp(props: any) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <ThemeProvider theme={theme}>
-        <React.Fragment>
-          <Updaters />
-          <Layout>
-            <motion.div
-              key={router.route}
-              initial="pageInitial"
-              animate="pageAnimate"
-              variants={{
-                pageInitial: {
-                  opacity: 0,
-                },
-                pageAnimate: {
-                  opacity: 1,
-                },
-              }}
-            >
-              <Web3Provider>
+        <Web3Provider>
+          <React.Fragment>
+            <Updaters />
+            <Layout>
+              <motion.div
+                key={router.route}
+                initial="pageInitial"
+                animate="pageAnimate"
+                variants={{
+                  pageInitial: {
+                    opacity: 0,
+                  },
+                  pageAnimate: {
+                    opacity: 1,
+                  },
+                }}
+              >
                 <Component {...pageProps} />
-              </Web3Provider>
-            </motion.div>
-          </Layout>
-        </React.Fragment>
+              </motion.div>
+            </Layout>
+          </React.Fragment>
+        </Web3Provider>
       </ThemeProvider>
     </React.Fragment>
   )
