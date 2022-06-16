@@ -62,9 +62,8 @@ export default function Modal({ isOpen, close }: ModalProps) {
 
           <img onClick={() => close()} src={Close} style={{ height: '1em', cursor: 'pointer' }} />
         </ModalHeader>
-        <div style={{ height: '5em' }}></div>
         <ModalTitle>Connect Wallet</ModalTitle>
-        <ModalSubTitle>To start using this dApp</ModalSubTitle>
+        <ModalSubTitle>To start using Web3 Starter Kit</ModalSubTitle>
         {!window ? (
           <ModalMenu>
             {walletsArray.map((wallet) => {

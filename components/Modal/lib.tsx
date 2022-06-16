@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { Dialog } from '@reach/dialog'
 
 export const StyledDialog = styled(Dialog)`
-  max-width: 22em;
+  max-width: 20em;
   border-radius: 3px;
-  padding: 2em;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@ export const ModalHeader = styled.div`
 export const ModalTitle = styled.div`
   color: black;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 14px;
   margin-top: 1em;
   margin-bottom: 0.25em;
 `
@@ -28,7 +28,7 @@ export const ModalTitle = styled.div`
 export const ModalSubTitle = styled.div`
   color: #64758b;
   font-weight: 500;
-  font-size: 1.1em;
+  font-size: 12px;
 `
 
 export const ModalMenu = styled.div`
@@ -40,16 +40,20 @@ export const ModalMenu = styled.div`
 `
 
 export const ModalMenuRow = styled.div`
-  padding: 2em;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
   border-radius: 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
   &:hover {
     box-shadow: 0px 0px 24px rgb(0 0 0 / 8%);
+  }
+  &:last-child {
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
   }
 `
 

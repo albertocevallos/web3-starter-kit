@@ -34,8 +34,8 @@ export default function MyApp(props: any) {
   return (
     <React.Fragment>
       <Head>
-        <title>Web3 React App</title>
-        <meta name="title" content="Web3 React App" />
+        <title>Web3 Starter Kit</title>
+        <meta name="title" content="Web3 Starter Kit" />
         <meta name="description" content="React, TypeScript boilerplate for Web3" />
         <meta name="keywords" content="web3, ethereum" />
         <meta name="robots" content="index, follow" />

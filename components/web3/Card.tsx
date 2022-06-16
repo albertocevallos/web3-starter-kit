@@ -39,7 +39,7 @@ export function Card({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: '20rem',
+        width: '18rem',
         padding: '1rem',
         margin: '1rem',
         overflow: 'auto',

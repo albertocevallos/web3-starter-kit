@@ -1,4 +1,4 @@
-# web3-react-app
+# Web3 Starter Kit
 
 A react, typescript boilerplate for Web3 applications.
 

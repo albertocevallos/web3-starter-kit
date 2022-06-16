@@ -4,13 +4,17 @@ import Wrapper from '../Wrapper'
 import { socialsArray } from 'config/menu'
 
 const StyledWrapper = styled(Wrapper)`
-  max-width: 576px;
+  width: 100%;
+  @media only screen and (min-width: 1024px) {
+    max-width: 576px;
+  }
 `
 
 const Wallpaper = styled.header`
   border-color: rgba(241, 245, 249, 1);
 `
 const Grid = styled.div`
+  width: 100%;
   padding: 2em;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
