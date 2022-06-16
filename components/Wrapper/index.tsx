@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding: 1em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 1024px) {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 `
 export default Wrapper

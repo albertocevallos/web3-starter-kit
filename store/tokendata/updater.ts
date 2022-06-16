@@ -156,8 +156,7 @@ export default function Updater(): null {
 
   const reset = resetTokenData()
   const tokenInfoUpdater = useTokenInfoUpdater()
-  const web3React = useWeb3React()
-  const { account, provider, chainId, isActive } = web3React
+  const { account, provider, chainId, isActive } = useWeb3React()
 
   useEffect(() => {
     if (!chainId || !account || !provider) {

@@ -1,5 +1,6 @@
 import React from 'react'
 import 'styles/index.css'
+import '@reach/dialog/styles.css'
 
 import { Layout } from 'components/base/Layout'
 
@@ -10,11 +11,13 @@ import Head from 'next/head'
 
 import Web3Provider from 'components/web3/Provider'
 
+import Web3Updater from 'connectors/updater'
 import TokenDataUpdater from 'store/tokendata/updater'
 
 function Updaters() {
   return (
     <>
+      <Web3Updater />
       <TokenDataUpdater />
     </>
   )

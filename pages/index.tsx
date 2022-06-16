@@ -1,52 +1,49 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import styled from 'styled-components'
+import Section from 'components/Section'
+import Wrapper from 'components/Wrapper'
+import Title from 'components/Title'
+import SubTitle from 'components/SubTitle'
+import { Card, Head } from 'components/Card'
 
-import CoinbaseWalletCard from 'components/web3/connectorCards/CoinbaseWalletCard'
-import GnosisSafeCard from 'components/web3/connectorCards/GnosisSafeCard'
-import MetaMaskCard from 'components/web3/connectorCards/MetaMaskCard'
-import NetworkCard from 'components/web3/connectorCards/NetworkCard'
-import WalletConnectCard from 'components/web3/connectorCards/WalletConnectCard'
+const HeroWrapper = styled(Wrapper)`
+  padding-top: 6rem;
+  @media only screen and (min-width: 1024px) {
+    max-width: 576px;
+  }
+`
+const CardWrapper = styled(Wrapper)`
+  width: 100%;
 
-import { useTokenDataStore } from 'store/tokendata'
-
-import { getName } from 'utils/web3'
+  @media only screen and (min-width: 1024px) {
+    max-width: 576px;
+  }
+`
+const StyledCard = styled(Card)`
+  margin-top: -8em;
+`
 
 const index = () => {
-  const web3React = useWeb3React()
-
-  const useTokenInfos = useTokenDataStore((state) => state.tokenInfos)
-  const usePutTokenData = useTokenDataStore((state) => state.putTokenData)
-  const useResetTokenData = useTokenDataStore((state) => state.resetTokenData)
-
   return (
-    <div>
-      <div>Priority connector is:{getName(web3React.connector)} </div>
-      <div>count: {useTokenInfos.length}</div>
-      <div>balance: {useTokenInfos[0]?.balance}</div>
-
-      <button
-        onClick={() => {
-          usePutTokenData({ balance: '1', allowances: [], tokenId: 'usdc' })
-        }}
-      >
-        increment
-      </button>
-      <button
-        onClick={() => {
-          useResetTokenData()
-        }}
-      >
-        reset
-      </button>
-      <button onClick={() => console.log(useTokenInfos)}>show state</button>
-      <div style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}>
-        <MetaMaskCard />
-        <WalletConnectCard />
-        <CoinbaseWalletCard />
-        <NetworkCard />
-        <GnosisSafeCard />
-      </div>
-    </div>
+    <>
+      <Section height="28" background="white">
+        <HeroWrapper>
+          <Title>React Web3 App</Title>
+          <SubTitle>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </SubTitle>
+        </HeroWrapper>
+      </Section>
+      <Section height="40" background="linear-gradient(to top, rgb(0, 0, 0), rgb(15, 23, 42))">
+        <CardWrapper>
+          <StyledCard>
+            <Head>Lorem ipsum dolor sit amet,</Head>
+          </StyledCard>
+        </CardWrapper>
+      </Section>
+    </>
   )
 }
 

@@ -7,6 +7,14 @@ html {
   font-weight: 500;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: 'Avenir Next';
   src: url('/fonts/Linotype - AvenirNextLTPro-UltLt.otf') format('opentype');
