@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-`
+import { Header } from './Header'
+import { Footer } from './Footer'
+import Wrapper from '../Wrapper'
+import PageWrapper from 'components/PageWrapper'
 
 interface LayoutProps {
   children: JSX.Element
@@ -14,9 +12,11 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div style={{ height: '100%', minHeight: '100vh' }}>
-      <Wrapper style={{ flex: '1 1 auto' }}>
+      <PageWrapper style={{ flex: '1 1 auto' }}>
+        <Header />
         <>{children}</>
-      </Wrapper>
+        <Footer />
+      </PageWrapper>
     </div>
   )
 }
