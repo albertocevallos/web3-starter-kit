@@ -11,7 +11,11 @@ const MATIC: AddEthereumChainParameter['nativeCurrency'] = {
   symbol: 'MATIC',
   decimals: 18,
 }
-
+const AVAX: AddEthereumChainParameter['nativeCurrency'] = {
+  name: 'Avax',
+  symbol: 'AVAX',
+  decimals: 18,
+}
 interface BasicChainInformation {
   urls: string[]
   name: string
@@ -131,6 +135,13 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
     name: 'Polygon Mumbai',
     nativeCurrency: MATIC,
     blockExplorerUrls: ['https://mumbai.polygonscan.com'],
+  },
+  // Avalanche
+  43114: {
+    urls: ['https://api.avax.network/ext/bc/C/rpc'].filter((url) => url !== undefined),
+    name: 'Avalanche Mainnet',
+    nativeCurrency: AVAX,
+    blockExplorerUrls: ['https://snowtrace.io'],
   },
 }
 

@@ -5,6 +5,7 @@ import Wrapper from 'components/Wrapper'
 import Title from 'components/Title'
 import SubTitle from 'components/SubTitle'
 import { Card, Head } from 'components/Card'
+import { useTokenDataStore } from 'store/tokendata'
 
 const HeroWrapper = styled(Wrapper)`
   padding-top: 6rem;
@@ -24,6 +25,9 @@ const StyledCard = styled(Card)`
 `
 
 const index = () => {
+  const useTokenInfos = useTokenDataStore((state) => state.tokenInfos)
+  console.log(useTokenInfos)
+
   return (
     <>
       <Section height="28" background="white">

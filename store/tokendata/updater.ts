@@ -1,7 +1,8 @@
+import { network } from 'connectors/network'
 import { useEffect, useCallback } from 'react'
 import { useTokenDataStore } from 'store/tokendata'
 import { TokenData } from './types'
-import { tokenIdsArray, getToken, TokenId, getAllowanceAddresses } from 'constants/tokens'
+import { tokenIdsArray, getToken, TokenId, getAllowanceAddresses, getTokenIdsArray } from 'constants/tokens'
 import { toTokenUnitsBN } from 'utils/bignumber'
 import { BigNumber, providers } from 'ethers'
 import { groupBy } from 'lodash'
@@ -14,7 +15,11 @@ type UpdateType = 'balance' | 'allowance'
 
 export const updateTokenData = async (
   tokenIds: TokenId[],
-  library: { provider: providers.Web3Provider | providers.JsonRpcProvider | providers.Web3Provider; address: string },
+  library: {
+    provider: providers.Web3Provider | providers.JsonRpcProvider | providers.Web3Provider
+    address: string
+    network?: number
+  },
   useTokenInfoUpdater: (tokenData: TokenData) => void,
   toUpdate?: UpdateType,
   allowanceAddresses?: string[]
@@ -32,7 +37,7 @@ export const updateTokenData = async (
     tokenIds = tokenIds.filter((x) => x !== 'eth')
   }
 
-  const multicall = new MulticallService(library.provider)
+  const multicall = new MulticallService(library.provider, library.network as number)
 
   const callHistory: { tokenId: TokenId; type: UpdateType; data?: any[] }[] = []
 
@@ -162,11 +167,12 @@ export default function Updater(): null {
     if (!chainId || !account || !provider) {
       return undefined
     }
+    const tokenIdsArrayInCurrentNetwork = getTokenIdsArray(chainId)
 
-    updateTokenData(tokenIdsArray, { provider, address: account }, tokenInfoUpdater)
+    updateTokenData(tokenIdsArrayInCurrentNetwork, { provider, address: account, network: chainId }, tokenInfoUpdater)
 
     const tokenDataUpdaterTimer = setInterval(() => {
-      updateTokenData(tokenIdsArray, { provider, address: account }, tokenInfoUpdater)
+      updateTokenData(tokenIdsArrayInCurrentNetwork, { provider, address: account, network: chainId }, tokenInfoUpdater)
     }, 30000)
 
     const tokenDataIntervalId: number = parseInt(tokenDataUpdaterTimer.toString())

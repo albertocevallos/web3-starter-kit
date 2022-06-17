@@ -1,5 +1,7 @@
+import { network } from 'connectors/network'
 import { CONTRACTS } from 'constants/contracts'
 import { BigNumber, Contract, ethers } from 'ethers'
+import { getMulticallAddress } from 'utils/address'
 
 const multicallAbi = [
   {
@@ -67,8 +69,8 @@ export class MulticallService {
   private contract: Contract
   private preparedCalls: PreparedCalls[] = []
 
-  constructor(provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider) {
-    this.contract = new ethers.Contract(CONTRACTS.multicall, multicallAbi, provider)
+  constructor(provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider, network: number) {
+    this.contract = new ethers.Contract(getMulticallAddress(network), multicallAbi, provider)
   }
 
   balanceOf = (contractAddress: string, owner: string): any => {

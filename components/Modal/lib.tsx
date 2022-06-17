@@ -63,8 +63,8 @@ export const ModalMenuIcon = styled.img`
   margin-right: 1em;
 `
 export const ModalMenuArrow = styled.img`
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 1.5em;
 `
 
 export const ModalMenuGroup = styled.div`
