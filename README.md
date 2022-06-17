@@ -19,13 +19,13 @@ A react, typescript boilerplate for Web3 applications.
 
 To install packages:
 
-```shell
+```bash
 yarn
 ```
 
 Run local development mode with:
 
-```shell
+```bash
 yarn dev
 ```
 
