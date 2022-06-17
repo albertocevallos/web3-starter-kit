@@ -14,6 +14,9 @@ export interface Address {
 
 export type ContractId = 'example' | 'example2' | 'example3'
 
+/*
+* DEV: Add contract addresses below, this is chain agnostic
+/*/
 export const VAULTS: { [key in ContractId]: Vault } = {
   example: {
     address: ZERO_ADDRESS,

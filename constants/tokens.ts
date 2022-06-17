@@ -11,12 +11,12 @@ export interface Token {
   network: number
 }
 /*
-* IMPORTANT: Add all token used by the dapp
+* DEV: Add all token used by the dapp
 /*/
 export type TokenId = 'eth' | 'usdc' | 'usdt' | 'dai' | 'usdte'
 
 /*
-* IMPORTANT: Add metadata for token Ids, they must match
+* DEV: Add metadata for token Ids, they must match
 /*/
 const tokens: { [key in TokenId]: Token } = {
   // ETHEREUM
