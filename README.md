@@ -31,7 +31,9 @@ yarn dev
 
 ### Configuration
 
-You can easily configure the boilerplate by changing the followin files:
+You can easily configure the boilerplate by changing the following files:
+
+- `config/theme.ts`: Colors, media queries, light mode, dark mode
 
 - `config/wallets.ts`: Specifies which wallets are supported
 
