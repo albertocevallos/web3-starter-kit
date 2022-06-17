@@ -7,7 +7,8 @@ A react, typescript boilerplate for Web3 applications.
 - ⚡ [Next.js](https://nextjs.org) for Static Site Generator
 - 🔥 Type checking [TypeScript](https://www.typescriptlang.org)
 - 🗂 [Zustand](https://github.com/pmndrs/zustand) for state management
-- 📒 Web3 accounts with [web3-react](https://github.com/NoahZinsmeister/web3-react)
+- 🦊 Web3 accounts with [web3-react](https://github.com/NoahZinsmeister/web3-react)
+- 🔧 [Ethers.js](https://docs.ethers.io/v5/) for interacting with Ethereum and EVMs
 
 ### Requirements
 
